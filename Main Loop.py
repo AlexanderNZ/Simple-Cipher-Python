@@ -1,7 +1,14 @@
 __author__ = 'Alex Corkin'
 
 from Tkinter import *
+import webbrowser
 
+personalWebsite = "http://4lex.nz"
+linkedIn = "http://nz.linkedin.com/in/alexcorkin"
+
+
+def OpenUrl(desiredUrl):
+    webbrowser.open_new(desiredUrl)
 
 def placeholderFunction():
     filewin = Toplevel(root)
@@ -22,8 +29,8 @@ filemenu.add_command(label="Exit", command=root.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 
 contactMenu = Menu(menubar, tearoff=0)
-contactMenu.add_command(label="4lex.nz Website", command=placeholderFunction)
-contactMenu.add_command(label="LinkedIn", command=placeholderFunction)
+contactMenu.add_command(label="4lex.nz Website", command=lambda aurl=personalWebsite: OpenUrl(aurl))
+contactMenu.add_command(label="LinkedIn", command=lambda aurl=linkedIn: OpenUrl(aurl))
 menubar.add_cascade(label="Contact", menu=contactMenu)
 
 root.config(menu=menubar)
