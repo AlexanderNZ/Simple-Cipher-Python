@@ -44,8 +44,14 @@ label = Label(root, textvariable=titleMessage, relief=RAISED, height=3)
 label.pack()
 root.mainloop()
 
-# Give user Options
 # Get User message
+
+messageKey = Label(root, text = "Cipher Key")
+messageKey.pack()
+messageKeyField = Entry(root, bd = 5)
+messageKeyField.pack()
+
+
 #Get User passphrase
 #Encrypt Message --> Pass details to Encryption.py
 #Display Result --> Recieve and Display message
