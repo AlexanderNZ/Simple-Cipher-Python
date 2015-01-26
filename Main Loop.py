@@ -16,41 +16,48 @@ def placeholderFunction():
     button.pack()
 
 
-root = Tk()
+class GUI:
+    def __init__(self):
+        # Set Up User Menu
+        menubar = Menu(root)
 
-# Set Up User Menu
-menubar = Menu(root)
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Clear Data", command=placeholderFunction)
+        filemenu = Menu(menubar, tearoff=0)
+        filemenu.add_command(label="Clear Data", command=placeholderFunction)
 
-filemenu.add_separator()
+        filemenu.add_separator()
 
-filemenu.add_command(label="Exit", command=root.quit)
-menubar.add_cascade(label="File", menu=filemenu)
+        filemenu.add_command(label="Exit", command=root.quit)
+        menubar.add_cascade(label="File", menu=filemenu)
 
-contactMenu = Menu(menubar, tearoff=0)
-contactMenu.add_command(label="4lex.nz Website", command=lambda aurl=personalWebsite: OpenUrl(aurl))
-contactMenu.add_command(label="LinkedIn", command=lambda aurl=linkedIn: OpenUrl(aurl))
-menubar.add_cascade(label="Contact", menu=contactMenu)
+        contactMenu = Menu(menubar, tearoff=0)
+        contactMenu.add_command(label="4lex.nz Website", command=lambda aurl=personalWebsite: OpenUrl(aurl))
+        contactMenu.add_command(label="LinkedIn", command=lambda aurl=linkedIn: OpenUrl(aurl))
+        menubar.add_cascade(label="Contact", menu=contactMenu)
 
-root.config(menu=menubar)
+        root.config(menu=menubar)
 
-# Show title
-titleMessage = StringVar()
-titleMessage.set("Welcome to the Simple Cipher Program")
+        # Show title
+        titleMessage = StringVar()
+        titleMessage.set("Welcome to the Simple Cipher Program")
 
-label = Label(root, textvariable=titleMessage, relief=RAISED, height=3)
+        label = Label(root, textvariable=titleMessage, relief=RAISED, height=3)
 
-label.pack()
-root.mainloop()
+        label.pack()
 
-# Get User message
 
-messageKey = Label(root, text = "Cipher Key")
-messageKey.pack()
-messageKeyField = Entry(root, bd = 5)
-messageKeyField.pack()
+        # Get User message
 
+        L1 = Label(root, text="User Name")
+        L1.pack(side=LEFT)
+        E1 = Entry(root, bd=5)
+
+        E1.pack(side=RIGHT)
+
+
+if __name__ == '__main__':
+    root = Tk()
+    GUI(root)
+    root.mainloop()
 
 #Get User passphrase
 #Encrypt Message --> Pass details to Encryption.py
