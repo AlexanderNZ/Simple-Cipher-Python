@@ -11,18 +11,17 @@ def OpenUrl(desiredUrl):
     webbrowser.open_new(desiredUrl)
 
 def placeholderFunction():
-    filewin = Toplevel(root)
+    filewin = Toplevel(mainWindow)
     button = Button(filewin, text="Do nothing button")
     button.pack()
 
 
 # Render GUI
-class GUI:
-    def __init__(self, master):
-        master.minsize(width=666, height=666)
 
 
 mainWindow = Tk()
+mainWindow.minsize(800, 600)
+mainWindow.geometry('800x600-50+50')
 mainWindow.mainloop()
 # Widgets
 
