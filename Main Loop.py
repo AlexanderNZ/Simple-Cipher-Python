@@ -16,6 +16,16 @@ def placeholderFunction():
     button.pack()
 
 
+def showScrambleView():
+    inputMessageLabel = Label(mainWindow, text="Enter the message to be scrambled")
+    inputMessageLabel.pack()
+    inputMessageEntry = Entry(mainWindow, bd=5)
+    inputMessageEntry.pack()
+
+
+def showUnscrambleView():
+    outputMessageLabel = Label()
+
 # Render GUI
 mainWindow = Tk()
 
@@ -29,8 +39,10 @@ titleWidget = Label(mainWindow, textvariable=programTitle)
 # User Action Radio Button
 
 radioController = IntVar()
-scramblerRadio = Radiobutton(mainWindow, text='Scramble a message', variable=radioController, value=1)
-unscrambleRadio = Radiobutton(mainWindow, text='Unscramble a message', variable=radioController, value=2)
+scramblerRadio = Radiobutton(mainWindow, text='Scramble a message', variable=radioController, value=1,
+                             command=showScrambleView)
+unscrambleRadio = Radiobutton(mainWindow, text='Unscramble a message', variable=radioController, value=2,
+                              command=showUnscrambleView)
 
 # Draws the window on screen complete with widgets
 
@@ -42,7 +54,7 @@ scramblerRadio.pack()
 unscrambleRadio.pack()
 mainWindow.mainloop()
 
-#Get User passphrase
+
 #Encrypt Message --> Pass details to Encryption.py
 #Display Result --> Recieve and Display message
 
