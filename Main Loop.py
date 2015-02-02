@@ -19,12 +19,19 @@ def placeholderFunction():
 def showScrambleView():
     inputMessageLabel = Label(mainWindow, text="Enter the message to be scrambled")
     inputMessageLabel.pack()
-    inputMessageEntry = Entry(mainWindow, bd=5)
+    inputMessageEntry = Entry(mainWindow)
     inputMessageEntry.pack()
-
+    showUnscrambleView.outputMessageLabel.pack_forget()
+    showUnscrambleView.outputMessageEntry.pack_forget()
 
 def showUnscrambleView():
-    outputMessageLabel = Label()
+    outputMessageLabel = Label(mainWindow, text="This is your scrambled message:")
+    outputMessageLabel.pack()
+    outputMessageText = Text(mainWindow)
+    outputMessageText.insert(INSERT, "Test Text")
+    outputMessageText.pack()
+    showScrambleView.inputMessageLabel.pack_forget()
+    showScrambleView.inputMessageEntry.pack_forget()
 
 # Render GUI
 mainWindow = Tk()
