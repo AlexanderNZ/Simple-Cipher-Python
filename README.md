@@ -1,8 +1,7 @@
 # Simple-Cipher-Python
 
-This is a project to keep me busy over the long weekend.
+This project has stalled. It was meant as a boredom buster for a weekend, but became a "5 spare minutes" project.
 
-I aim to write a simple program that takes a given string and enciphers it somehow.
-The string can then be deciphered by providing the appropriate password. 
+Unfortunately returning to Uni and keeping my job, with the addition of my first child (to be born in the next few weeks) has left me very time poor. 5 minute windows are few and far between. I have every intention of continuing work on this project, and I will be hard pressed to find time to do it.
 
-Or something like that.
+In terms of features and scope the project is still in it's infancy. Barely a stub. I'm not happy with it and will try to crack on with it whenever I can. No Promises.
